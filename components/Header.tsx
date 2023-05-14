@@ -3,6 +3,7 @@ import React from 'react'
 import logo from '../assets/reddit-1.svg'
 import secLogo from '../assets/reddit-2.svg'
 import { HiHome, HiChevronDown, HiSearch, HiOutlineSparkles, HiOutlineGlobeAlt, HiOutlineVideoCamera,HiOutlineChatAlt, HiOutlineBell, HiPlus, HiOutlineSpeakerphone,HiOutlineMenu } from "react-icons/hi";
+import { signIn } from 'next-auth/react';
 
 
 const Header = () => {
@@ -40,7 +41,7 @@ const Header = () => {
       <div className='ml-5 flex items-center lg:hidden'>
         <HiOutlineMenu className='icon h-5 w-5'/>
       </div>
-      <div className='hidden cursor-pointer items-center space-x-2 border border-gray-100 p-2 lg:flex'>
+      <div onClick={()=>signIn()} className='hidden cursor-pointer items-center space-x-2 border border-gray-100 p-2 lg:flex'>
       <div className='relative h-5 w-5 flex-shrink-0'>
         <Image
         src={secLogo}
